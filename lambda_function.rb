@@ -1,4 +1,10 @@
-def lambda_handler(event:, context:)
-  puts 'ログです'
-  { statusCode: 200, body: JSON.generate('Hello from Lambda!') }
+require 'slack-ruby-client'
+
+def lambda_handler
+  slack_notification
+end
+
+def slack_notification
+  client = Slack::Web::Client.new(token: ENV['SLACK_TOKEN'])
+  client.chat_postMessage(channel: ENV['SLACK_CHANNEL'], text: 'hello, AWS Lambda!', as_user: true)
 end
