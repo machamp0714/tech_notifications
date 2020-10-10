@@ -1,6 +1,6 @@
 require 'slack-ruby-client'
 
-def lambda_handler
+def lambda_handler(event:, context:)
   slack_notification
 end
 
