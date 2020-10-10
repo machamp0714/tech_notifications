@@ -1,6 +1,5 @@
 require 'slack-ruby-client'
 require 'faraday'
-require 'pry-byebug'
 require 'nokogiri'
 
 def lambda_handler(event:, context:)
